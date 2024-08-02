@@ -1,68 +1,59 @@
-# CodeIgniter 4 Application Starter
 
-## What is CodeIgniter?
+# Number Converter
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+Este é um sistema simples de conversão de números que permite converter números romanos para arábicos e vice-versa. O sistema utiliza CodeIgniter no backend e Vue.js no frontend para proporcionar uma experiência interativa e agradável.
 
-This repository holds a composer-installable app starter.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+## Funcionalidades
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+- Conversão de números romanos para arábicos.
+- Conversão de números arábicos para romanos.
+- Validação de entradas para garantir que os números estejam no formato correto.
+- Interface intuitiva com transições suaves e feedback visual.
+- Suporte a dispositivos móveis com layout responsivo.
 
-You can read the [user guide](https://codeigniter.com/user_guide/)
-corresponding to the latest version of the framework.
+## Requisitos
 
-## Installation & updates
+- PHP >= 7.2
+- Composer
+- Servidor web (Apache, Nginx, etc.)
 
-`composer create-project codeigniter4/appstarter` then `composer update` whenever
-there is a new release of the framework.
+## Como Executar
 
-When updating, check the release notes to see if there are any changes you might need to apply
-to your `app` folder. The affected files can be copied or merged from
-`vendor/codeigniter4/framework/app`.
+1. Clone o repositório:
+    ```bash
+    git clone https://github.com/glaiton-silva/number-converter.git
+    cd number-converter
+    ```
 
-## Setup
+2. Instale as dependências do Composer:
+    ```bash
+    composer install
+    ```
 
-Copy `env` to `.env` and tailor for your app, specifically the baseURL
-and any database settings.
+3. Inicie o servidor de desenvolvimento do CodeIgniter:
+    ```bash
+    php spark serve
+    ```
 
-## Important Change with index.php
+4. Abra seu navegador e acesse:
+    ```
+    http://localhost:8080
+    ```
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+## Estrutura do Projeto
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+- `app/Controllers/ConversionController.php`: Controlador que lida com as conversões de números.
+- `app/Views/conversion_view.php`: View principal que contém o layout da aplicação.
+- `public/css/styles.css`: Arquivo CSS para estilização.
+- `public/js/app.js`: Lógica Vue.js para interação no frontend.
+- `public/js/gradient.js`: Script JavaScript para a animação de gradiente de fundo.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+## Licença
 
-## Repository Management
+Este projeto está licenciado sob a Licença MIT.
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+## Sobre
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+Este projeto foi desenvolvido como um exemplo simples de como combinar CodeIgniter e Vue.js para criar uma aplicação interativa. Ele oferece uma interface intuitiva para a conversão de números e inclui algumas funcionalidades adicionais, como a validação de entradas e animações de fundo.
 
-## Server Requirements
-
-PHP version 8.1 or higher is required, with the following extensions installed:
-
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
-
-> [!WARNING]
-> - The end of life date for PHP 7.4 was November 28, 2022.
-> - The end of life date for PHP 8.0 was November 26, 2023.
-> - If you are still using PHP 7.4 or 8.0, you should upgrade immediately.
-> - The end of life date for PHP 8.1 will be December 31, 2025.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Sinta-se à vontade para clonar o repositório, explorar o código e adaptar conforme suas necessidades!
